@@ -1,0 +1,11 @@
+{
+  "key": "relu_ce_he_h128",
+  "family": "relu_ce_he",
+  "hidden": 128,
+  "lr": 0.3,
+  "epochs": 20,
+  "batch_size": 64,
+  "val_acc_mean": 0.9766333333333334,
+  "val_acc_std": 0.00011547005383791244,
+  "selected_by": "highest mean final-epoch validation accuracy"
+}

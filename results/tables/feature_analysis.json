@@ -1,0 +1,80 @@
+{
+  "analysed_model": {
+    "config": "relu_ce_he",
+    "hidden": 64,
+    "lr": 0.3,
+    "val_acc": 0.9701
+  },
+  "spearman_variance_vs_importance": 0.7103479853479854,
+  "importance_pp": {
+    "max": 1.0099999999999998,
+    "median": 0.23499999999999632,
+    "min": -0.0400000000000067
+  },
+  "most_important_units": [
+    {
+      "unit": 47,
+      "drop_pp": 1.0099999999999998,
+      "preferred_class": 6,
+      "selectivity": 0.41262155771255493
+    },
+    {
+      "unit": 45,
+      "drop_pp": 0.9699999999999931,
+      "preferred_class": 4,
+      "selectivity": 0.5461637377738953
+    },
+    {
+      "unit": 28,
+      "drop_pp": 0.9599999999999942,
+      "preferred_class": 1,
+      "selectivity": 0.7705888748168945
+    },
+    {
+      "unit": 61,
+      "drop_pp": 0.8599999999999941,
+      "preferred_class": 0,
+      "selectivity": 0.48540422320365906
+    },
+    {
+      "unit": 21,
+      "drop_pp": 0.8000000000000007,
+      "preferred_class": 0,
+      "selectivity": 0.6267435550689697
+    },
+    {
+      "unit": 48,
+      "drop_pp": 0.7000000000000006,
+      "preferred_class": 9,
+      "selectivity": 0.37020063400268555
+    },
+    {
+      "unit": 22,
+      "drop_pp": 0.7000000000000006,
+      "preferred_class": 3,
+      "selectivity": 0.6052809953689575
+    },
+    {
+      "unit": 25,
+      "drop_pp": 0.6900000000000017,
+      "preferred_class": 5,
+      "selectivity": 0.5897137522697449
+    }
+  ],
+  "selectivity": {
+    "mean": 0.5723762512207031,
+    "median": 0.5692017078399658
+  },
+  "dead_units_on_validation": 0,
+  "original_model_saturation": {
+    "units_0_to_5_samples_displayed_as_a_1000": [
+      217,
+      316,
+      1,
+      2259,
+      4,
+      63
+    ],
+    "spearman_variance_vs_importance": 0.41295787545787543
+  }
+}

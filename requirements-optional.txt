@@ -1,0 +1,3 @@
+# Optional: framework baseline (experiments/sklearn_baseline.py) and the demo notebook
+scikit-learn>=1.3
+jupyter

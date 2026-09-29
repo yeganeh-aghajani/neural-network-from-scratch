@@ -1,0 +1,27 @@
+[
+  {
+    "true": 5,
+    "pred": 3,
+    "count": 12
+  },
+  {
+    "true": 9,
+    "pred": 4,
+    "count": 9
+  },
+  {
+    "true": 6,
+    "pred": 4,
+    "count": 8
+  },
+  {
+    "true": 7,
+    "pred": 2,
+    "count": 7
+  },
+  {
+    "true": 9,
+    "pred": 7,
+    "count": 7
+  }
+]
