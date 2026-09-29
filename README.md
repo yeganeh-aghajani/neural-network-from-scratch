@@ -22,51 +22,56 @@ The main implementation is in `src/`. Scikit-learn is used only in an optional c
 
 For a mini-batch \(X \in \mathbb{R}^{N \times 784}\), the network uses one hidden layer:
 
-\[
-Z_1 = XW_1 + b_1,\qquad
-A_1 = \phi(Z_1),\qquad
-Z_2 = A_1W_2 + b_2,\qquad
-P = \mathrm{softmax}(Z_2)
-\]
+$$
+Z_1 = XW_1+b_1,\qquad A_1=\phi(Z_1),\qquad Z_2=A_1W_2+b_2,\qquad P=\mathrm{softmax}(Z_2)
+$$
 
 where \(\phi\) can be ReLU or sigmoid.
 
 For the softmax/cross-entropy version, the loss is
 
-\[
+$$
 \mathcal{L}
 =
 -\frac{1}{N}
 \sum_{n=1}^{N}
 \sum_{k=1}^{10}
 Y_{nk}\log P_{nk}
-\]
+$$
 
 and the output-layer gradient is
 
-\[
+$$
 \delta_2 = \frac{1}{N}(P-Y)
-\]
+$$
 
 followed by
 
-\[
-\frac{\partial \mathcal{L}}{\partial W_2}=A_1^\top\delta_2,
+$$
+\frac{\partial \mathcal{L}}{\partial W_2}
+=
+A_1^\top\delta_2,
 \qquad
-\frac{\partial \mathcal{L}}{\partial b_2}=\sum_n \delta_{2,n}
-\]
+\frac{\partial \mathcal{L}}{\partial b_2}
+=
+\sum_n \delta_{2,n}
+$$
 
 and
 
-\[
+$$
 \delta_1=(\delta_2W_2^\top)\odot\phi'(Z_1)
-\]
+$$
 
-\[
-\frac{\partial \mathcal{L}}{\partial W_1}=X^\top\delta_1,
+$$
+\frac{\partial \mathcal{L}}{\partial W_1}
+=
+X^\top\delta_1,
 \qquad
-\frac{\partial \mathcal{L}}{\partial b_1}=\sum_n\delta_{1,n}
-\]
+\frac{\partial \mathcal{L}}{\partial b_1}
+=
+\sum_n\delta_{1,n}
+$$
 
 All parameter updates are performed explicitly with mini-batch gradient descent.
 
@@ -76,7 +81,7 @@ The implementation also supports sigmoid output with MSE loss so the effects of 
 
 The implementation supports:
 
-- small Gaussian initialization: \(\mathcal{N}(0,0.01^2)\)
+- small Gaussian initialization: $\mathcal{N}(0,0.01^2)$
 - Xavier initialization
 - He initialization
 
@@ -84,13 +89,14 @@ The implementation supports:
 
 The analytical gradients are compared with central finite differences on small float64 networks:
 
-\[
-\frac{\mathcal{L}(\theta+\epsilon)-\mathcal{L}(\theta-\epsilon)}{2\epsilon}
-\]
+$$
+\frac{\mathcal{L}(\theta+\epsilon)-\mathcal{L}(\theta-\epsilon)}
+{2\epsilon}
+$$
 
 with \(\epsilon=10^{-5}\).
 
-Across the tested combinations of activation, loss, initialization, and network depth, the maximum relative error was between \(3.2\times10^{-8}\) and \(2.6\times10^{-7}\).
+Across the tested combinations of activation, loss, initialization, and network depth, the maximum relative error was between $3.2\times10^{-8}$ and $2.6\times10^{-7}$.
 
 See [`results/tables/gradient_check.md`](results/tables/gradient_check.md).
 
@@ -228,8 +234,8 @@ Removing one hidden unit at a time causes a maximum validation-accuracy drop of 
 
 The rank correlation between input-weight variance and ablation importance is:
 
-- Spearman \(\rho = 0.71\) for the ReLU model
-- Spearman \(\rho = 0.41\) for the sigmoid+MSE reference model
+- Spearman $\rho = 0.71$ for the ReLU model
+- Spearman $\rho = 0.41$ for the sigmoid+MSE reference model
 
 Additional figures:
 
