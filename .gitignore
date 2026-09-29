@@ -1,0 +1,9 @@
+# MNIST is downloaded automatically by src/data.py
+data/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+.DS_Store
