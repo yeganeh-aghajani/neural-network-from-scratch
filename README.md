@@ -20,23 +20,18 @@ The main implementation is in `src/`. Scikit-learn is used only in an optional c
 
 ## Model
 
-For a mini-batch \(X \in \mathbb{R}^{N \times 784}\), the network uses one hidden layer:
+For a mini-batch $(X \in \mathbb{R}^{N \times 784}\)$, the network uses one hidden layer:
 
 $$
 Z_1 = XW_1+b_1,\qquad A_1=\phi(Z_1),\qquad Z_2=A_1W_2+b_2,\qquad P=\mathrm{softmax}(Z_2)
 $$
 
-where \(\phi\) can be ReLU or sigmoid.
+where $(\phi\)$ can be ReLU or sigmoid.
 
 For the softmax/cross-entropy version, the loss is
 
 $$
-\mathcal{L}
-=
--\frac{1}{N}
-\sum_{n=1}^{N}
-\sum_{k=1}^{10}
-Y_{nk}\log P_{nk}
+\mathcal{L} = -\frac{1}{N}\sum_{n=1}^{N}\sum_{k=1}^{10}Y_{nk}\log(P_{nk})
 $$
 
 and the output-layer gradient is
@@ -48,13 +43,7 @@ $$
 followed by
 
 $$
-\frac{\partial \mathcal{L}}{\partial W_2}
-=
-A_1^\top\delta_2,
-\qquad
-\frac{\partial \mathcal{L}}{\partial b_2}
-=
-\sum_n \delta_{2,n}
+\frac{\partial \mathcal{L}}{\partial W_2}=A_1^\top\delta_2,\qquad \frac{\partial \mathcal{L}}{\partial b_2}=\sum_n\delta_{2,n}
 $$
 
 and
@@ -64,13 +53,7 @@ $$
 $$
 
 $$
-\frac{\partial \mathcal{L}}{\partial W_1}
-=
-X^\top\delta_1,
-\qquad
-\frac{\partial \mathcal{L}}{\partial b_1}
-=
-\sum_n\delta_{1,n}
+\frac{\partial \mathcal{L}}{\partial W_1}=X^\top\delta_1,\qquad \frac{\partial \mathcal{L}}{\partial b_1}=\sum_n\delta_{1,n}
 $$
 
 All parameter updates are performed explicitly with mini-batch gradient descent.
@@ -90,11 +73,10 @@ The implementation supports:
 The analytical gradients are compared with central finite differences on small float64 networks:
 
 $$
-\frac{\mathcal{L}(\theta+\epsilon)-\mathcal{L}(\theta-\epsilon)}
-{2\epsilon}
+\frac{\mathcal{L}(\theta+\epsilon)-\mathcal{L}(\theta-\epsilon)}{2\epsilon}
 $$
 
-with \(\epsilon=10^{-5}\).
+with $\epsilon=10^{-5}$.
 
 Across the tested combinations of activation, loss, initialization, and network depth, the maximum relative error was between $3.2\times10^{-8}$ and $2.6\times10^{-7}$.
 
