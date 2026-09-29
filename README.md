@@ -1,8 +1,14 @@
 # Neural Network from Scratch in NumPy
 
-This repository contains a multilayer perceptron for MNIST classification built with Python and NumPy. The forward pass, backpropagation, parameter updates, activation functions, and loss functions are implemented manually rather than through a deep-learning framework.
+## Overview
 
-The project also includes numerical gradient checking, architecture comparisons, ablation experiments, error analysis, and hidden-unit visualization.
+This project implements a multilayer perceptron from scratch using NumPy.
+The goal is to study the mathematical foundations of neural networks by
+implementing forward propagation, backpropagation, parameter updates, and
+evaluation without relying on deep-learning frameworks.
+
+The project also includes numerical gradient checking, architecture comparisons,
+ablation experiments, error analysis, and hidden-unit visualization.
 
 ## Key results
 
