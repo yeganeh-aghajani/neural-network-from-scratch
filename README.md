@@ -251,7 +251,7 @@ The scikit-learn model is not used in the main implementation.
 ## Repository structure
 
 ```text
-mlp-from-scratch/
+neural-network-from-scratch/
 ├── README.md
 ├── requirements.txt
 ├── requirements-optional.txt
