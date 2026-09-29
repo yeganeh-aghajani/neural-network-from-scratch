@@ -304,8 +304,8 @@ neural-network-from-scratch/
 ## Running the project
 
 ```bash
-git clone <repo-url>
-cd mlp-from-scratch
+git clone https://github.com/yeganeh-aghajani/neural-network-from-scratch.git
+cd neural-network-from-scratch
 
 python -m venv .venv
 source .venv/bin/activate
